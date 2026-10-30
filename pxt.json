@@ -1,0 +1,20 @@
+{
+    "name": "grove-lcd-rgb-v4",
+    "version": "1.0.0",
+    "description": "Grove LCD RGB Backlight v4.0 (16x2 I2C, LCD 0x3E + RGB 0x62)",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}

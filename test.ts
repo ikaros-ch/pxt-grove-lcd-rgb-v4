@@ -1,0 +1,5 @@
+groveLcd.setRGB(0, 128, 255)
+groveLcd.showString("Hello micro:bit", 0, 0)
+groveLcd.showNumber(42, 0, 1)
+groveLcd.setColor(0xff0000)
+groveLcd.clear()
