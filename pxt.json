@@ -1,6 +1,6 @@
 {
     "name": "grove-lcd-rgb-v4",
-    "version": "2.0.0",
+    "version": "2.0.2",
     "description": "Grove LCD RGB Backlight v4.0 (16x2 I2C, LCD 0x3E + RGB 0x62)",
     "license": "MIT",
     "dependencies": {
@@ -8,7 +8,19 @@
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "docs/character-pixels.md",
+        "docs/clear.md",
+        "docs/display.md",
+        "docs/make-character.md",
+        "docs/rainbow.md",
+        "docs/set-color.md",
+        "docs/set-hue.md",
+        "docs/set-rgb.md",
+        "docs/show-character.md",
+        "docs/show-number.md",
+        "docs/show-string.md",
+        "docs/stop-rainbow.md"
     ],
     "testFiles": [
         "test.ts"
