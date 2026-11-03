@@ -1,6 +1,6 @@
 {
     "name": "grove-lcd-rgb-v4",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Grove LCD RGB Backlight v4.0 (16x2 I2C, LCD 0x3E + RGB 0x62)",
     "license": "MIT",
     "dependencies": {
