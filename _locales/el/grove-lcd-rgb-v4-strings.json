@@ -1,0 +1,20 @@
+{
+  "groveLcd|block": "Grove LCD RGB",
+  "{id:category}GroveLcd": "Grove LCD RGB",
+  "{id:group}Text": "Κείμενο",
+  "{id:group}Backlight": "Φωτισμός",
+  "{id:subcategory}Characters": "Χαρακτήρες",
+  "groveLcd.showString|block": "LCD εμφάνισε κείμενο %text|στη στήλη %col|γραμμή %row",
+  "groveLcd.showNumber|block": "LCD εμφάνισε αριθμό %n|στη στήλη %col|γραμμή %row",
+  "groveLcd.clear|block": "LCD καθάρισε την οθόνη",
+  "groveLcd.display|block": "LCD οθόνη %on=toggleOnOff",
+  "groveLcd.setRGB|block": "LCD φωτισμός κόκκινο %r|πράσινο %g|μπλε %b",
+  "groveLcd.setColor|block": "LCD χρώμα φωτισμού %color=colorNumberPicker",
+  "groveLcd.setHue|block": "LCD απόχρωση φωτισμού %h",
+  "groveLcd.rainbow|block": "LCD φωτισμός ουράνιο τόξο|ταχύτητα %ms ms ανά βήμα",
+  "groveLcd.stopRainbow|block": "LCD σταμάτα το ουράνιο τόξο",
+  "groveLcd.backlight|block": "LCD φωτισμός %on=toggleOnOff",
+  "groveLcd.makeCharacter|block": "LCD φτιάξε χαρακτήρα %char|%im=groveLcd_charPixels",
+  "groveLcd.characterPixels|block": "χαρακτήρας",
+  "groveLcd.showCharacter|block": "LCD εμφάνισε χαρακτήρα %char|στη στήλη %col|γραμμή %row"
+}

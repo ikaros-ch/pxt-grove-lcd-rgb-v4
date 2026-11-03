@@ -58,6 +58,27 @@ input.onButtonPressed(Button.A, function () {
 
 Any backlight color block also stops the rainbow.
 
+### Save power
+
+The backlight uses most of the display's power. Turn it off when nobody is looking; the text and the last color are kept.
+
+```blocks
+// Light up for 5 seconds after button B, then go dark
+groveLcd.showString("Press B", 0, 0)
+groveLcd.backlight(false)
+input.onButtonPressed(Button.B, function () {
+    groveLcd.backlight(true)
+    basic.pause(5000)
+    groveLcd.backlight(false)
+})
+```
+
+Any color block or the rainbow turns the backlight back on.
+
+## Ελληνικά
+
+Τα μπλοκ είναι μεταφρασμένα στα ελληνικά. Επιλέξτε **Ελληνικά** από το μενού γλώσσας του MakeCode (γρανάζι → Language).
+
 ## Custom characters
 
 Find these in the **Characters** subcategory. Draw up to 8 of your own 5x8 characters, then show them anywhere.

@@ -33,6 +33,7 @@ namespace groveLcd {
     let inited = false
     let rainbowOn = false
     let rainbowMs = 20
+    let lightOn = true
 
     function cmd(v: number) {
         pins.i2cWriteBuffer(LCD_ADDR, pins.createBufferFromArray([0x80, v]))
@@ -71,6 +72,12 @@ namespace groveLcd {
         reg(0x01, 0x20)
         rgb(255, 255, 255)
         inited = true
+    }
+
+    // color blocks turn a switched-off backlight back on
+    function wake() {
+        init()
+        if (!lightOn) backlight(true)
     }
 
     function cursor(col: number, row: number) {
@@ -142,7 +149,7 @@ namespace groveLcd {
     //% group="Backlight" weight=70
     //% help=github:grove-lcd-rgb-v4/docs/set-rgb
     export function setRGB(r: number, g: number, b: number) {
-        init()
+        wake()
         rainbowOn = false
         rgb(r, g, b)
     }
@@ -178,7 +185,7 @@ namespace groveLcd {
     //% group="Backlight" weight=64
     //% help=github:grove-lcd-rgb-v4/docs/set-hue
     export function setHue(h: number) {
-        init()
+        wake()
         rainbowOn = false
         hue(h)
     }
@@ -193,7 +200,7 @@ namespace groveLcd {
     //% group="Backlight" weight=63
     //% help=github:grove-lcd-rgb-v4/docs/rainbow
     export function rainbow(ms: number) {
-        init()
+        wake()
         rainbowMs = Math.max(5, ms)
         if (rainbowOn) return
         rainbowOn = true
@@ -215,6 +222,28 @@ namespace groveLcd {
     //% help=github:grove-lcd-rgb-v4/docs/stop-rainbow
     export function stopRainbow() {
         rainbowOn = false
+    }
+
+    /**
+     * Turn the backlight off to save power, or back on with its last color.
+     * Text stays on the screen. Any color block also turns it back on.
+     * @param on true to turn the backlight on, false to turn it off
+     */
+    //% block="LCD backlight %on=toggleOnOff"
+    //% group="Backlight" weight=61
+    //% help=github:grove-lcd-rgb-v4/docs/backlight
+    export function backlight(on: boolean) {
+        init()
+        lightOn = on
+        if (on) {
+            reg(0x00, 0) // MODE1: wake the PCA9632 oscillator
+            basic.pause(1) // needs 500 us before PWM works
+            reg(0x08, 0xFF) // LEDOUT: LEDs follow PWM again, color registers kept
+        } else {
+            rainbowOn = false
+            reg(0x08, 0) // LEDOUT: all LEDs off
+            reg(0x00, 0x10) // MODE1: sleep, oscillator off
+        }
     }
 
     /**

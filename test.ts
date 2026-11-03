@@ -43,6 +43,23 @@ groveLcd.setColor(0xffffff)
 // EXPECT: rainbow stops, backlight white
 basic.pause(1000)
 
+// Backlight off/on keeps text and color
+groveLcd.setRGB(255, 0, 255)
+groveLcd.backlight(false)
+// EXPECT: backlight dark (text may be hard to see)
+basic.pause(1500)
+groveLcd.backlight(true)
+// EXPECT: backlight magenta again
+basic.pause(1000)
+groveLcd.rainbow(10)
+groveLcd.backlight(false)
+// EXPECT: dark, rainbow stopped (stays dark)
+basic.pause(1500)
+groveLcd.setColor(0x00ffff)
+// EXPECT: color block turns it back on: cyan
+basic.pause(1000)
+groveLcd.setColor(0xffffff)
+
 // Custom characters
 groveLcd.clear()
 // EXPECT: screen empty
