@@ -86,7 +86,7 @@ namespace groveLcd {
     //% block="LCD show text %text|at column %col|row %row"
     //% col.min=0 col.max=15 row.min=0 row.max=1
     //% group="Text" weight=100
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/show-string
+    //% help=github:grove-lcd-rgb-v4/docs/show-string
     export function showString(text: string, col: number, row: number) {
         init()
         cursor(col, row)
@@ -102,7 +102,7 @@ namespace groveLcd {
     //% block="LCD show number %n|at column %col|row %row"
     //% col.min=0 col.max=15 row.min=0 row.max=1
     //% group="Text" weight=90
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/show-number
+    //% help=github:grove-lcd-rgb-v4/docs/show-number
     export function showNumber(n: number, col: number, row: number) {
         showString("" + n, col, row)
     }
@@ -112,7 +112,7 @@ namespace groveLcd {
      */
     //% block="LCD clear"
     //% group="Text" weight=80
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/clear
+    //% help=github:grove-lcd-rgb-v4/docs/clear
     export function clear() {
         init()
         cmd(0x01)
@@ -124,7 +124,7 @@ namespace groveLcd {
      */
     //% block="LCD display %on=toggleOnOff"
     //% group="Text" weight=60
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/display
+    //% help=github:grove-lcd-rgb-v4/docs/display
     export function display(on: boolean) {
         init()
         cmd(on ? 0x0C : 0x08)
@@ -140,7 +140,7 @@ namespace groveLcd {
     //% r.min=0 r.max=255 g.min=0 g.max=255 b.min=0 b.max=255
     //% r.defl=255 g.defl=255 b.defl=255
     //% group="Backlight" weight=70
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/set-rgb
+    //% help=github:grove-lcd-rgb-v4/docs/set-rgb
     export function setRGB(r: number, g: number, b: number) {
         init()
         rainbowOn = false
@@ -152,7 +152,7 @@ namespace groveLcd {
      */
     //% block="LCD backlight color %color=colorNumberPicker"
     //% group="Backlight" weight=65
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/set-color
+    //% help=github:grove-lcd-rgb-v4/docs/set-color
     export function setColor(color: number) {
         setRGB((color >> 16) & 0xFF, (color >> 8) & 0xFF, color & 0xFF)
     }
@@ -176,7 +176,7 @@ namespace groveLcd {
     //% block="LCD backlight hue %h"
     //% h.min=0 h.max=359
     //% group="Backlight" weight=64
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/set-hue
+    //% help=github:grove-lcd-rgb-v4/docs/set-hue
     export function setHue(h: number) {
         init()
         rainbowOn = false
@@ -191,7 +191,7 @@ namespace groveLcd {
     //% block="LCD rainbow backlight|speed %ms ms per step"
     //% ms.min=5 ms.max=500 ms.defl=20
     //% group="Backlight" weight=63
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/rainbow
+    //% help=github:grove-lcd-rgb-v4/docs/rainbow
     export function rainbow(ms: number) {
         init()
         rainbowMs = Math.max(5, ms)
@@ -212,7 +212,7 @@ namespace groveLcd {
      */
     //% block="LCD stop rainbow"
     //% group="Backlight" weight=62
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/stop-rainbow
+    //% help=github:grove-lcd-rgb-v4/docs/stop-rainbow
     export function stopRainbow() {
         rainbowOn = false
     }
@@ -225,7 +225,7 @@ namespace groveLcd {
     //% subcategory="Characters"
     //% block="LCD make character %char|%im=groveLcd_charPixels"
     //% weight=60
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/make-character
+    //% help=github:grove-lcd-rgb-v4/docs/make-character
     export function makeCharacter(char: LcdChar, im: Image) {
         init()
         cmd(0x40 | (char << 3)) // CGRAM address of this slot
@@ -245,7 +245,7 @@ namespace groveLcd {
     //% imageLiteral=1 imageLiteralColumns=5 imageLiteralRows=8 imageLiteralScale=0.6
     //% shim=images::createImage
     //% weight=59
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/character-pixels
+    //% help=github:grove-lcd-rgb-v4/docs/character-pixels
     export function characterPixels(i: string): Image {
         return <Image><any>i
     }
@@ -260,7 +260,7 @@ namespace groveLcd {
     //% block="LCD show character %char|at column %col|row %row"
     //% col.min=0 col.max=15 row.min=0 row.max=1
     //% weight=58
-    //% help=github:pxt-grove-lcd-rgb-v4/docs/show-character
+    //% help=github:grove-lcd-rgb-v4/docs/show-character
     export function showCharacter(char: LcdChar, col: number, row: number) {
         init()
         cursor(col, row)
