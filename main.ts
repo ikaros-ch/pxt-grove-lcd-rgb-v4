@@ -57,10 +57,10 @@ namespace groveLcd {
         // LCD powers up with the micro:bit; commands sent before its reset finishes are lost (1-line mode)
         const wait = BOOT_MS - control.millis()
         basic.pause(Math.max(50, wait))
-        // function set: 2 lines, 5x8
-        cmd(0x28); basic.pause(5)
-        cmd(0x28); control.waitMicros(150)
-        cmd(0x28)
+        // function set: 8-bit x3 then 2 lines, 5x8 (sequence from calliope-edu/pxt-rgblcd, made for v4.0)
+        cmd(0x38); basic.pause(5)
+        cmd(0x38); basic.pause(1)
+        cmd(0x38)
         cmd(0x28)
         cmd(0x0C) // display on, cursor off, blink off
         cmd(0x01); basic.pause(2) // clear
