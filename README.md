@@ -10,7 +10,31 @@ In [MakeCode](https://makecode.microbit.org): **Extensions** → paste `https://
 groveLcd.setRGB(0, 128, 255)
 groveLcd.showString("Hello micro:bit", 0, 0)
 groveLcd.showNumber(42, 0, 1)
+groveLcd.rainbow(20)
 ```
+
+### Backlight
+`backlight red/green/blue`, `backlight color`, `backlight hue` (0-359), `rainbow backlight` (runs in background, any other backlight block stops it), `stop rainbow`.
+
+### Characters (subcategory)
+Draw up to 8 custom 5x8 characters and place them anywhere:
+
+```blocks
+groveLcd.makeCharacter(LcdChar.c1, groveLcd.characterPixels(`
+    . . . . .
+    . # . # .
+    # # # # #
+    # # # # #
+    . # # # .
+    . . # . .
+    . . . . .
+    . . . . .
+    `))
+groveLcd.showCharacter(LcdChar.c1, 0, 0)
+```
+
+### Only 8 characters show?
+The LCD missed its 2-line setup at power-on. Press reset on the micro:bit; if that fixes it, raise `BOOT_MS` in `main.ts`. Also power the LCD from 5V if possible.
 
 Ported from [Seeed-Studio/Grove_LCD_RGB_Backlight](https://github.com/Seeed-Studio/Grove_LCD_RGB_Backlight) (MIT).
 v5.0 boards use RGB address `0x30` and different registers — not covered here.
