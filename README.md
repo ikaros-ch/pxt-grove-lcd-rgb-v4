@@ -34,7 +34,7 @@ groveLcd.showCharacter(LcdChar.c1, 0, 0)
 ```
 
 ### Only 8 characters show?
-The LCD is in 1-line mode. 1.1.2 uses the v4.0 init sequence from calliope-edu/pxt-rgblcd; if it still happens, open an issue with your board version and what row 2 shows.
+If text stops at column 8 on every line, the display itself is likely faulty (seen on a real v4.0 unit; a replacement showed all 16). Check the ribbon/edge of the glass.
 
 Ported from [Seeed-Studio/Grove_LCD_RGB_Backlight](https://github.com/Seeed-Studio/Grove_LCD_RGB_Backlight) (MIT).
 v5.0 boards use RGB address `0x30` and different registers — not covered here.
