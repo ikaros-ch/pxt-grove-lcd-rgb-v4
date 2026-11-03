@@ -3,19 +3,19 @@
 Show a custom character made with **make character**.
 
 ```sig
-groveLcd.showCharacter(LcdChar.C1, 0, 0)
+groveLcd.showCharacter(groveLcd.CustomCharacter.C1, 0, 0)
 ```
 
 ## Parameters
 
-* **char**: slot 1-8.
+* **character**: custom character slot 1-8.
 * **col**: column 0-15.
 * **row**: 0 (top) or 1 (bottom).
 
 ## Example
 
 ```blocks
-groveLcd.makeCharacter(LcdChar.C1, groveLcd.characterPixels(`
+groveLcd.makeCharacter(groveLcd.CustomCharacter.C1, groveLcd.characterPixels(`
     . . . . .
     . # . # .
     # # # # #
@@ -26,7 +26,7 @@ groveLcd.makeCharacter(LcdChar.C1, groveLcd.characterPixels(`
     . . . . .
     `))
 for (let i = 0; i <= 15; i++) {
-    groveLcd.showCharacter(LcdChar.C1, i, 1)
+    groveLcd.showCharacter(groveLcd.CustomCharacter.C1, i, 1)
 }
 ```
 

@@ -18,7 +18,7 @@ groveLcd.characterPixels(`
 ## Example
 
 ```blocks
-groveLcd.makeCharacter(LcdChar.C2, groveLcd.characterPixels(`
+groveLcd.makeCharacter(groveLcd.CustomCharacter.C2, groveLcd.characterPixels(`
     . . . . .
     . # . # .
     # # # # #

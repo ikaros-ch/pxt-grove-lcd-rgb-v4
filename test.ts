@@ -63,7 +63,7 @@ groveLcd.setColor(0xffffff)
 // Custom characters
 groveLcd.clear()
 // EXPECT: screen empty
-groveLcd.makeCharacter(LcdChar.C1, groveLcd.characterPixels(`
+groveLcd.makeCharacter(groveLcd.CustomCharacter.C1, groveLcd.characterPixels(`
     . . . . .
     . # . # .
     # # # # #
@@ -73,7 +73,7 @@ groveLcd.makeCharacter(LcdChar.C1, groveLcd.characterPixels(`
     . . . . .
     . . . . .
     `))
-groveLcd.makeCharacter(LcdChar.C8, groveLcd.characterPixels(`
+groveLcd.makeCharacter(groveLcd.CustomCharacter.C8, groveLcd.characterPixels(`
     # # # # #
     # . . . #
     # . . . #
@@ -83,7 +83,7 @@ groveLcd.makeCharacter(LcdChar.C8, groveLcd.characterPixels(`
     # . . . #
     # # # # #
     `))
-groveLcd.showCharacter(LcdChar.C1, 0, 0)
-groveLcd.showCharacter(LcdChar.C8, 15, 1)
+groveLcd.showCharacter(groveLcd.CustomCharacter.C1, 0, 0)
+groveLcd.showCharacter(groveLcd.CustomCharacter.C8, 15, 1)
 groveLcd.showString("custom", 2, 0)
 // EXPECT: heart top-left, "custom" after it, box in bottom-right corner

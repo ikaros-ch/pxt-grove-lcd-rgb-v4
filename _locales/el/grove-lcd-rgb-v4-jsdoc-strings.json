@@ -21,11 +21,11 @@
   "groveLcd.backlight": "Σβήνει τον φωτισμό για εξοικονόμηση ενέργειας ή τον ανάβει ξανά με το τελευταίο χρώμα. Το κείμενο μένει στην οθόνη. Κάθε μπλοκ χρώματος τον ανάβει ξανά.",
   "groveLcd.backlight|param|on": "true για να ανάψει ο φωτισμός, false για να σβήσει",
   "groveLcd.makeCharacter": "Αποθηκεύει έναν δικό σου χαρακτήρα 5x8 στη θέση 1-8",
-  "groveLcd.makeCharacter|param|char": "η θέση αποθήκευσης",
+  "groveLcd.makeCharacter|param|character": "η θέση αποθήκευσης",
   "groveLcd.makeCharacter|param|im": "το σχέδιο 5x8",
   "groveLcd.characterPixels": "Ένα σχέδιο 5x8 pixel για δικό σου χαρακτήρα",
   "groveLcd.showCharacter": "Εμφανίζει έναν αποθηκευμένο χαρακτήρα σε μια στήλη και γραμμή",
-  "groveLcd.showCharacter|param|char": "θέση από το «φτιάξε χαρακτήρα»",
+  "groveLcd.showCharacter|param|character": "θέση από το «φτιάξε χαρακτήρα»",
   "groveLcd.showCharacter|param|col": "στήλη 0-15",
   "groveLcd.showCharacter|param|row": "γραμμή 0 (πάνω) ή 1 (κάτω)"
 }

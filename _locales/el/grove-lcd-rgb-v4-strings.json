@@ -14,7 +14,7 @@
   "groveLcd.rainbow|block": "LCD φωτισμός ουράνιο τόξο|ταχύτητα %ms ms ανά βήμα",
   "groveLcd.stopRainbow|block": "LCD σταμάτα το ουράνιο τόξο",
   "groveLcd.backlight|block": "LCD φωτισμός %on=toggleOnOff",
-  "groveLcd.makeCharacter|block": "LCD φτιάξε χαρακτήρα %char|%im=groveLcd_charPixels",
+  "groveLcd.makeCharacter|block": "LCD φτιάξε χαρακτήρα %character|%im=groveLcd_charPixels",
   "groveLcd.characterPixels|block": "χαρακτήρας",
-  "groveLcd.showCharacter|block": "LCD εμφάνισε χαρακτήρα %char|στη στήλη %col|γραμμή %row"
+  "groveLcd.showCharacter|block": "LCD εμφάνισε χαρακτήρα %character|στη στήλη %col|γραμμή %row"
 }

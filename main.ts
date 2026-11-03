@@ -1,31 +1,35 @@
+// Grove LCD RGB Backlight v4.0
+// LCD controller (AiP31068/JHD1313) at 0x3E, RGB controller (PCA9632) at 0x62.
+// Based on Seeed-Studio/Grove_LCD_RGB_Backlight (MIT).
+
 /**
- * Grove LCD RGB Backlight v4.0
- * LCD controller (AiP31068/JHD1313) at 0x3E, RGB controller (PCA9632) at 0x62.
- * Based on Seeed-Studio/Grove_LCD_RGB_Backlight (MIT).
+ * Text, color backlight and custom characters for the Grove LCD RGB Backlight v4.0
  */
-
-const enum LcdChar {
-    //% block="1"
-    C1 = 0,
-    //% block="2"
-    C2 = 1,
-    //% block="3"
-    C3 = 2,
-    //% block="4"
-    C4 = 3,
-    //% block="5"
-    C5 = 4,
-    //% block="6"
-    C6 = 5,
-    //% block="7"
-    C7 = 6,
-    //% block="8"
-    C8 = 7
-}
-
 //% color="#2a9d8f" weight=90 icon="" block="Grove LCD RGB"
 //% groups='["Text", "Backlight"]'
 namespace groveLcd {
+    /**
+     * Slot 1-8 for a custom character
+     */
+    export enum CustomCharacter {
+        //% block="1"
+        C1 = 0,
+        //% block="2"
+        C2 = 1,
+        //% block="3"
+        C3 = 2,
+        //% block="4"
+        C4 = 3,
+        //% block="5"
+        C5 = 4,
+        //% block="6"
+        C6 = 5,
+        //% block="7"
+        C7 = 6,
+        //% block="8"
+        C8 = 7
+    }
+
     const LCD_ADDR = 0x3E
     const RGB_ADDR = 0x62
     // ms after micro:bit boot before the LCD is talked to; raise if text shows only 8 chars after power-on
@@ -248,16 +252,16 @@ namespace groveLcd {
 
     /**
      * Store a custom 5x8 character in slot 1-8
-     * @param char slot to store it in
+     * @param character slot to store it in
      * @param im the 5x8 drawing
      */
     //% subcategory="Characters"
-    //% block="LCD make character %char|%im=groveLcd_charPixels"
+    //% block="LCD make character %character|%im=groveLcd_charPixels"
     //% weight=60
     //% help=github:grove-lcd-rgb-v4/docs/make-character
-    export function makeCharacter(char: LcdChar, im: Image) {
+    export function makeCharacter(character: CustomCharacter, im: Image) {
         init()
-        cmd(0x40 | (char << 3)) // CGRAM address of this slot
+        cmd(0x40 | (character << 3)) // CGRAM address of this slot
         for (let y = 0; y < 8; y++) {
             let row = 0
             for (let x = 0; x < 5; x++) if (im.pixel(x, y)) row |= 1 << (4 - x)
@@ -281,18 +285,18 @@ namespace groveLcd {
 
     /**
      * Show a stored custom character at a column and row
-     * @param char slot made with "make character"
+     * @param character slot made with "make character"
      * @param col column 0-15
      * @param row row 0 (top) or 1 (bottom)
      */
     //% subcategory="Characters"
-    //% block="LCD show character %char|at column %col|row %row"
+    //% block="LCD show character %character|at column %col|row %row"
     //% col.min=0 col.max=15 row.min=0 row.max=1
     //% weight=58
     //% help=github:grove-lcd-rgb-v4/docs/show-character
-    export function showCharacter(char: LcdChar, col: number, row: number) {
+    export function showCharacter(character: CustomCharacter, col: number, row: number) {
         init()
         cursor(col, row)
-        data(char)
+        data(character)
     }
 }

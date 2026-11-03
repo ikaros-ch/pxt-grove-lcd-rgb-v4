@@ -85,7 +85,7 @@ Find these in the **Characters** subcategory. Draw up to 8 of your own 5x8 chara
 
 ```blocks
 // Store a heart in slot 1
-groveLcd.makeCharacter(LcdChar.C1, groveLcd.characterPixels(`
+groveLcd.makeCharacter(groveLcd.CustomCharacter.C1, groveLcd.characterPixels(`
     . . . . .
     . # . # .
     # # # # #
@@ -97,7 +97,7 @@ groveLcd.makeCharacter(LcdChar.C1, groveLcd.characterPixels(`
     `))
 // Show "I <heart> micro:bit"
 groveLcd.showString("I", 0, 0)
-groveLcd.showCharacter(LcdChar.C1, 2, 0)
+groveLcd.showCharacter(groveLcd.CustomCharacter.C1, 2, 0)
 groveLcd.showString("micro:bit", 4, 0)
 ```
 
