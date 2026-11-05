@@ -160,6 +160,7 @@ namespace groveLcd {
 
     /**
      * Set backlight to a color. Stops the rainbow.
+     * @param color the backlight color, eg: 0xff0000
      */
     //% block="LCD backlight color %color=colorNumberPicker"
     //% group="Backlight" weight=65
@@ -183,6 +184,7 @@ namespace groveLcd {
 
     /**
      * Set backlight by hue on the color wheel (0=red, 120=green, 240=blue). Stops the rainbow.
+     * @param h hue 0-359, eg: 120
      */
     //% block="LCD backlight hue %h"
     //% h.min=0 h.max=359
