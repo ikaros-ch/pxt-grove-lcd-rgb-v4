@@ -1,6 +1,7 @@
 // Grove LCD RGB Backlight v4.0
 // LCD controller (AiP31068/JHD1313) at 0x3E, RGB controller (PCA9632) at 0x62.
-// Based on Seeed-Studio/Grove_LCD_RGB_Backlight (MIT).
+// Based on Seeed-Studio/Grove_LCD_RGB_Backlight (MIT). How the display works was also
+// learned from DFRobot/DFRobot_RGBLCD1602 (MIT).
 
 /**
  * Text, color backlight and custom characters for the Grove LCD RGB Backlight v4.0

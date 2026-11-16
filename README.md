@@ -119,7 +119,7 @@ groveLcd.showString("micro:bit", 4, 0)
 
 ## License
 
-MIT. Ported from [Seeed-Studio/Grove_LCD_RGB_Backlight](https://github.com/Seeed-Studio/Grove_LCD_RGB_Backlight) (MIT). The init sequence follows [calliope-edu/pxt-rgblcd](https://github.com/calliope-edu/pxt-rgblcd).
+MIT. Ported from [Seeed-Studio/Grove_LCD_RGB_Backlight](https://github.com/Seeed-Studio/Grove_LCD_RGB_Backlight) (MIT). The init sequence follows [calliope-edu/pxt-rgblcd](https://github.com/calliope-edu/pxt-rgblcd). How the display works was also learned from [DFRobot/DFRobot_RGBLCD1602](https://github.com/DFRobot/DFRobot_RGBLCD1602) (MIT).
 
 #### Metadata (used for search, rendering)
 
